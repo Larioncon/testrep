@@ -196,9 +196,8 @@ ______________ */
 
 .header__watch {
   margin-top: 50px;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .watch {
@@ -210,6 +209,7 @@ width: 325px;
 height: auto;
 justify-content: center;
 border-radius: 20px;
+margin-left: 100px;
 }
 .watch__hours:hover,
 .watch__minutes:hover {
@@ -231,7 +231,8 @@ ________________________- */
 .main {
 }
 .dev__section {
-  
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .dev__inner {
@@ -241,7 +242,6 @@ ________________________- */
   width: 700px;
   background-color: #2e323f;
   border-radius: 20px;
-  margin-bottom: 20px;
 }
 .dev__heading {
   margin-top: 50px;
@@ -254,4 +254,34 @@ ________________________- */
   margin-top: 30px;
   margin-left: 28px;
   color:aliceblue;
+}
+/* 
+---- 
+task-branch 
+----- */
+.task-branch__first {
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+
+.task-branch__inner {
+  margin-left: 390px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FF6433;
+  border-radius: 7px;
+  height: 100px;
+  width: 400px;
+}
+.task-branch__heading {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+.task-branch__sub-heading {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #FFFFFF;
 }
