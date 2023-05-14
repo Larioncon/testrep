@@ -285,3 +285,38 @@ task-branch
   margin-left: 10px;
   color: #FFFFFF;
 }
+/* dev-commit */
+
+.main__dev-commit {
+}
+
+
+.inner {
+  margin-left: 390px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FF6433;
+  border-radius: 7px;
+  height: 100px;
+  width: 400px;
+}
+
+.heading {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.text {
+  font-size: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #FFFFFF;
+}
+.dev-commit__heading {
+}
+.dev-commit__text {
+}
+.dev-commit__inner {
+margin-left: 200px;
+}
