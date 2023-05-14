@@ -222,3 +222,36 @@ transition: 0.5s;
 }
 .watch__minutes-numbers {
 }
+
+/* ________________________-
+MAIN 
+DEV SEC 
+________________________- */
+
+.main {
+}
+.dev__section {
+  
+}
+
+.dev__inner {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 700px;
+  background-color: #2e323f;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+.dev__heading {
+  margin-top: 50px;
+  margin-left: 40px;
+  color: #e2e486;
+  font-size: 60px;
+}
+.dev__text {
+  font-size: 30px;
+  margin-top: 30px;
+  margin-left: 28px;
+  color:aliceblue;
+}
