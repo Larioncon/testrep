@@ -9,6 +9,7 @@ html, body {
   width: 100%;
   overflow: hidden;
   transition: 1s;
+  background-color: #4B3A3A;
 }
 .wrapper-dark {
   background-color: #424551;
@@ -221,4 +222,105 @@ transition: 0.5s;
 .watch__dots {
 }
 .watch__minutes-numbers {
+}
+
+/* ______________
+main
+______________
+calculator CI  */
+
+.main {
+}
+.main__ci-calc {
+background-color: #4B3A3A;
+font-family: 'Times New Roman';
+}
+.container {
+}
+.ci-calc__inner {
+}
+.ci-calc__heading {
+  width: 1057px;
+  height: 248px;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 87px;
+  color: #FFFFFF;
+  text-shadow: 10px 10px 10px #000000;
+}
+.ci-calc__calculator {
+width: 1036px;
+height: 626px;
+background: #D5FAF8;
+border-radius: 28px;
+margin-top: 35px;
+margin-bottom: 138px;
+}
+.ci-calc__inputs {
+  padding: 36px 122px 21px 74px;
+}
+.ci-calc__input-field  {
+  display: flex;
+  flex-direction: column;
+}
+
+.ci-calc__input-field label {left: 1.55%;
+  right: 27.02%;
+  top: -7.77%;
+  bottom: 49.51%;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 48px;
+  color: #000000;
+}
+
+.ci-calc__input-field input {
+height: 60px;
+width: 840px;
+top: 41.75%;
+bottom: 0%;
+background: rgba(141, 208, 196, 0.5);
+border-radius: 10px;
+color: #C43535;
+font-style: normal;
+font-weight: 400;
+font-size: 35px;
+line-height: 40px;
+padding-top: 14px;
+padding-left: 21px;
+padding-bottom: 13px;
+
+}
+.ci-calc__calculate-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 20px 80px;
+  gap: 10px;
+  width: 391px;
+  height: 106px;
+  background: #A0FD56;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+margin-left: 294px;
+font-family: 'Manrope';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 66px;
+color: #3B5C27;
+border: 1px solid rgba(0, 0, 0, 0.25);
+text-shadow: 4px 4px 4px rgba(60, 4, 4, 0.5);
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.ci-calc__inputs input[type="number"]::-webkit-outer-spin-button,
+.ci-calc__inputs input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

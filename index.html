@@ -64,7 +64,37 @@
       </section>
 
     </header>
-  
+  <main class="main">
+    <section class="main__ci-calc">
+      <div class="container">
+        <div class="ci-calc__inner">
+          <h1 class="ci-calc__heading">Сложный процент.<br>Калькулятор сложного процента. Compound interest calculator.</h1>
+          <div class="ci-calc__calculator">
+            <div class="ci-calc__inputs">
+              <div class="ci-calc__input-field">
+                <label for="initial-deposit">Начальный депозит:</label>
+                <input type="number" id="initial-deposit" name="initial-deposit">
+              </div>
+              <div class="ci-calc__input-field">
+                <label for="periods-count">Количество периодов:</label>
+                <input type="number" id="periods-count" name="periods-count">
+              </div>
+              <div class="ci-calc__input-field">
+                <label for="period-interest-rate">Доходность за 1 период(%):</label>
+                <input type="number" id="period-interest-rate" name="period-interest-rate">
+              </div>
+              <div class="ci-calc__input-field">
+                <label for="periodic-payment">Довложения каждый период:</label>
+                <input type="number" id="periodic-payment" name="periodic-payment">
+              </div>
+            </div>
+            <button onclick="loadScript()" class="ci-calc__calculate-btn">ПОДСЧЕТ</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
 
 
 

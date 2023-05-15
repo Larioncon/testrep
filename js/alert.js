@@ -2,19 +2,25 @@
 // let money = 1000 + 1040 + 416 + 1040 + 312 + 1040; 
 // alert(money);
 
-let room = {
-  number: 23
-};
+// Получение элементов формы и кнопки "ПОДСЧЕТ"
+const form = document.querySelector('.ci-calc__inputs');
+const calcButton = document.querySelector('.ci-calc__calculate-btn');
 
-let meetup = {
-  title: "Совещание",
-  occupiedBy: [{name: 'Ivanov'}, {name: 'Pretov'}],
-  place: room
-};
+// Добавление обработчика клика на кнопку "ПОДСЧЕТ"
+calcButton.addEventListener('click', () => {
+  // Получение значений из полей формы
+  const initialDeposit = Number(document.getElementById('initial-deposit').value);
+  const periodsCount = Number(document.getElementById('periods-count').value);
+  const periodInterestRate = Number(document.getElementById('period-interest-rate').value) / 100;
+  const periodicPayment = Number(document.getElementById('periodic-payment').value);
 
-room.occupiedBy = meetup;
-meetup.self = meetup;
+  // Вычисление конечной суммы
+  let sum = initialDeposit;
+  for (let i = 0; i < periodsCount; i++) {
+    sum += periodicPayment;
+    sum *= (1 + periodInterestRate);
+  }
 
-alert ( JSON.stringify(meetup, function replacer(key, value){
-return (key != '' && value == meetup) ? undefined : value;
-}));
+  // Вывод результата в окно alert()
+  alert(`Конечная сумма: ${sum.toFixed(2)}`);
+});
