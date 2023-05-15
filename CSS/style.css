@@ -318,7 +318,14 @@ text-shadow: 4px 4px 4px rgba(60, 4, 4, 0.5);
 flex: none;
 order: 0;
 flex-grow: 0;
+transition: 0.5s;
 }
+.ci-calc__calculate-btn:hover,
+.ci-calc__calculate-btn:focus {
+  background: rgba(92, 153, 43, 0.588);
+}
+
+
 .ci-calc__inputs input[type="number"]::-webkit-outer-spin-button,
 .ci-calc__inputs input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;

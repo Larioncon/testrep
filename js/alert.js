@@ -2,25 +2,29 @@
 // let money = 1000 + 1040 + 416 + 1040 + 312 + 1040; 
 // alert(money);
 
-// Получение элементов формы и кнопки "ПОДСЧЕТ"
-const form = document.querySelector('.ci-calc__inputs');
-const calcButton = document.querySelector('.ci-calc__calculate-btn');
+const calculateBtn = document.querySelector('.ci-calc__calculate-btn');
 
-// Добавление обработчика клика на кнопку "ПОДСЧЕТ"
-calcButton.addEventListener('click', () => {
-  // Получение значений из полей формы
+calculateBtn.addEventListener('click', function() {
   const initialDeposit = Number(document.getElementById('initial-deposit').value);
   const periodsCount = Number(document.getElementById('periods-count').value);
-  const periodInterestRate = Number(document.getElementById('period-interest-rate').value) / 100;
+  const periodInterestRate = Number(document.getElementById('period-interest-rate').value);
   const periodicPayment = Number(document.getElementById('periodic-payment').value);
 
-  // Вычисление конечной суммы
-  let sum = initialDeposit;
-  for (let i = 0; i < periodsCount; i++) {
-    sum += periodicPayment;
-    sum *= (1 + periodInterestRate);
+  let totalDeposit = initialDeposit;
+  let table = ' # \t Начало \t Прибыль \t Довложение \t Конец \n';
+
+  for (let i = 1; i <= periodsCount; i++) {
+    let profit = totalDeposit * periodInterestRate / 100;
+    let endPeriodDeposit = totalDeposit + profit + periodicPayment;
+    table += `${i}\t${totalDeposit.toFixed(2)}\t${profit.toFixed(2)}\t${periodicPayment.toFixed(2)}\t${endPeriodDeposit.toFixed(2)}\n`;
+    totalDeposit = endPeriodDeposit;
   }
 
-  // Вывод результата в окно alert()
-  alert(`Конечная сумма: ${sum.toFixed(2)}`);
+  const finalDeposit = totalDeposit.toFixed(2);
+  const finalPeriodProfit = (totalDeposit - periodicPayment * (periodsCount - 1) - initialDeposit * (1 + periodInterestRate / 100) ** (periodsCount - 1)).toFixed(2);
+  const finalDividends = finalPeriodProfit;
+
+  let messageResult = (`К концу срока (${periodsCount} периодов), ваш вклад будет составлять ${finalDeposit}$, учитывая ставку ${periodInterestRate}% за период. По окончанию срока вклада, размер дивидендов будет составлять ${finalDividends}$ за период. Таблица начисления процентов:\n\n${table}`);
+  alert(messageResult);
+  console.log(messageResult);
 });
