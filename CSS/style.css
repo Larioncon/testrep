@@ -1,6 +1,7 @@
 html, body {
   font-size: 16px;
   font-family: Manrope, sans-serif;
+  font-style: normal;
   color: #424551;
   line-height: 160%;
 }
@@ -38,7 +39,7 @@ html, body {
 MAIN PLACE 
 ------------------------- */
 
- .header__main {
+.header__main {
   display: flex;
   background-color: #2e323f;
 }
@@ -50,7 +51,6 @@ MAIN PLACE
   padding: 16px 40px;
   background: #FF6433;
   border-radius: 12px;
-  font-style: normal;
   font-weight: 600;
   font-size: 18px;
   line-height: 175%;
@@ -96,7 +96,7 @@ margin-left: 20px;
 .header__btn {
   margin-right: 20px;
   background-color: rgb(41, 42, 134);
-} */
+}
 
 /* ____------ */
 
@@ -110,17 +110,12 @@ margin-left: 150px;
   width: 414px;
   height: 51px;
 }
-.header__search {
-}
-.header__search-form {
-}
 .header__search-input {
 width: 319px;
 height: 34px;
 background: rgba(180, 255, 121, 0.27);
 border-radius: 7px;
 align-items: center;
-font-style: normal;
 font-weight: 600;
 font-size: 19px;
 line-height: 23px;
@@ -131,8 +126,6 @@ padding-left: 25px;
 color: #FFF9C8;
 }
 
-.header__settings {
-} 
 /* _____
 -------------------------- */
 
@@ -173,9 +166,7 @@ color: #FFF9C8;
   padding-bottom: 5px;
   border-radius: 7px;
 }
-.button {
-  
-}
+
 .header__button-sec {
   color: rgb(192, 221, 220);
   background-color: rgb(63, 119, 172);
@@ -217,33 +208,17 @@ margin-left: 100px;
 color: brown;
 transition: 0.5s;
 }
-.watch__hours-numbers {
-}
-.watch__dots {
-}
-.watch__minutes-numbers {
-}
+
 
 /* ______________
 main
 ______________
 calculator CI  */
 
-.main {
-}
-.main__ci-calc {
-background-color: #4B3A3A;
-font-family: 'Times New Roman';
-}
-.container {
-}
-.ci-calc__inner {
-}
+
 .ci-calc__heading {
   width: 1057px;
   height: 248px;
-  font-family: 'Manrope';
-  font-style: normal;
   font-weight: 400;
   font-size: 64px;
   line-height: 87px;
@@ -266,12 +241,11 @@ margin-bottom: 138px;
   flex-direction: column;
 }
 
-.ci-calc__input-field label {left: 1.55%;
+.ci-calc__input-field label {
+  left: 1.55%;
   right: 27.02%;
   top: -7.77%;
   bottom: 49.51%;
-  font-family: 'Manrope';
-  font-style: normal;
   font-weight: 400;
   font-size: 35px;
   line-height: 48px;
@@ -286,14 +260,10 @@ bottom: 0%;
 background: rgba(141, 208, 196, 0.5);
 border-radius: 10px;
 color: #C43535;
-font-style: normal;
 font-weight: 400;
 font-size: 35px;
 line-height: 40px;
-padding-top: 14px;
-padding-left: 21px;
-padding-bottom: 13px;
-
+padding: 14px 21px 13px;
 }
 .ci-calc__calculate-btn {
   display: flex;
@@ -306,9 +276,7 @@ padding-bottom: 13px;
   background: #A0FD56;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
-margin-left: 294px;
-font-family: 'Manrope';
-font-style: normal;
+  margin-left: 294px;
 font-weight: 700;
 font-size: 48px;
 line-height: 66px;
@@ -324,10 +292,78 @@ transition: 0.5s;
 .ci-calc__calculate-btn:focus {
   background: rgba(92, 153, 43, 0.588);
 }
-
-
 .ci-calc__inputs input[type="number"]::-webkit-outer-spin-button,
 .ci-calc__inputs input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+/* ____
+result 
+______ */
+
+.main__ci-result {
+  z-index: -1;
+}
+.ci-result__inner {
+}
+.ci-result__list {
+position: relative;
+display: flex;
+flex-direction: column;
+width: 620px;
+height: 716px;
+background: #D9D9D9;
+margin-bottom: 182px;
+z-index: 1;
+}
+.ci-result__list::after {
+  content: url('../Images/main__ci-result/element.svg');
+  position: absolute;
+  width: 609px;
+  height: 85px;
+  top: -14px;
+  right: -13px;
+  display: block;
+  z-index: -1;
+}
+
+.ci-result__list div:nth-child(1) {
+  margin: 43px 10px 0 110px;
+  width: 400px;
+  height: 20px;
+  background: #959595;
+}
+.ci-result__list div:nth-child(3) {
+  margin: 0 10px;
+  width: 600px;
+  height: 20px;
+  background: #959595;
+}
+
+.ci-result__heading {
+  margin-left: 110px;
+font-weight: 400;
+font-size: 36px;
+line-height: 49px;
+text-align: center;
+color: #02042B;
+-webkit-text-stroke: 1px #000000;
+text-stroke: 1px #000000;
+width: 400px;
+height: 55px;
+
+}
+.ci-result__info {
+font-size: 14px;
+line-height: 19px;
+color: #010000;
+text-shadow: 4px 4px 5px rgba(178, 210, 126, 0.7);
+margin: 19px 10px 9px;
+}
+
+.ci-result__table {
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: pre;
+  font-family: monospace;
 }
