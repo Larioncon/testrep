@@ -367,3 +367,9 @@ margin: 19px 10px 9px;
   white-space: pre;
   font-family: monospace;
 }
+.profit-cell {
+  color: rgb(12, 145, 12);
+}
+.number-cell {
+  color: rgb(52, 22, 223);
+}
