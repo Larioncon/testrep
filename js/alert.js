@@ -12,4 +12,4 @@
 // }
 // alert (pow(2, 5) );
 
-alert ('huj')
+alert ('huj');
