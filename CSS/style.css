@@ -61,3 +61,10 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
   border: 6px solid #d11010;
   transition: 0.1s;
 }
+@media (max-width: 600px) {
+  .test-js__inner {
+    margin-top: 209px;
+    margin-left: 125px;
+    margin-bottom: 210px;
+    }
+  }
