@@ -24,9 +24,12 @@ background-color: #B0DAD2;
 overflow: auto;
 }
 .test-js__inner {
-margin-top: 215px;
-margin-left: 450px;
-margin-bottom: 215px;
+}
+.test-js__heading {
+  font-size: 64px;
+  color: midnightblue;
+  margin-top: 100px;
+  margin-left: 200px;
 }
 .test-js__button {
 box-sizing: border-box;
@@ -42,6 +45,9 @@ line-height: 131px;
 color: #1f1d1d;
 text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
 transition: all 1s;
+margin-top: 152px;
+margin-left: 450px;
+margin-bottom: 152px;
 }
 .test-js__button:hover {
   transform: scale(1.1);
@@ -61,10 +67,55 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
   border: 6px solid #d11010;
   transition: 0.1s;
 }
-@media (max-width: 600px) {
-  .test-js__inner {
-    margin-top: 209px;
-    margin-left: 125px;
-    margin-bottom: 210px;
+@media (max-width: 900px) {
+  .test-js__heading {
+    font-size: 45px;
+    color: rgb(124, 10, 218);
+    margin-top: 100px;
+    margin-left: 150px;
+  }
+  .test-js__button {
+    margin-top: 100px;
+    margin-left: 270px;
+    margin-bottom: 193px;
+  }
+  }
+@media (max-width: 800px) {
+  .test-js__heading {
+    font-size: 32px;
+    color: rgb(89, 112, 25);
+    margin-top: 100px;
+    margin-left: 150px;
+  }
+  .test-js__button {
+    margin-top: 100px;
+    margin-left: 220px;
+    margin-bottom: 193px;
+  }
+  }
+  @media (max-width: 700px) {
+    .test-js__heading {
+      font-size: 32px;
+      color: rgb(19, 197, 188);
+      margin-top: 100px;
+      margin-left: 130px;
     }
+    .test-js__button {
+      margin-top: 100px;
+      margin-left: 180px;
+      margin-bottom: 193px;
+    }
+    }
+@media (max-width: 600px) {
+  .test-js__heading {
+    font-size: 32px;
+    color: midnightblue;
+    margin-top: 100px;
+    margin-left: 50px;
+  }
+  .test-js__button {
+    margin-top: 100px;
+    margin-left: 110px;
+    margin-bottom: 193px;
+  }
   }
