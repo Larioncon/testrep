@@ -23,8 +23,6 @@ html, body {
 background-color: #B0DAD2;
 overflow: auto;
 }
-.test-js__inner {
-}
 .test-js__heading {
   font-size: 64px;
   color: midnightblue;
