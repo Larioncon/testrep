@@ -117,3 +117,17 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
     margin-bottom: 193px;
   }
   }
+  @media (max-width: 170px) {
+    .test-js__heading {
+      font-size: 18px;
+      color: rgb(2, 2, 7);
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    .test-js__button {
+      margin-top: 1px;
+      margin-left: -87px;
+      margin-bottom: 330px;
+      transform: scale(0.5);
+    }
+    }
