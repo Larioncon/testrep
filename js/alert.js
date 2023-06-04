@@ -2,28 +2,12 @@
 // let money = 1000 + 1040 + 416 + 1040 + 312 + 1040 + 100; 
 // alert(money);
 
-function createLogger () {
-  let log = '';
+function getFunc() {
+  let value = "test";
 
-  function logger(message) {
-    log += message + '\n';
-    alert(log);
-  }
-  function clear() {
-    log = '';
-    alert('Log cleared');
-  }
+  let func = new Function('alert(value)');
 
-  return {
-    log: logger,
-    clear: clear
-  };
+  return func;
 }
 
-let logger = createLogger();
-
-alert('Привет, меня зовут Альбертумус, я заргон, а...')
-let userName = prompt('А как зовут тебя?', );
-logger.log(`Приятно познакомиться, ${userName}`);
-logger.log('Я собираюсь поведать тебе очень занятную историю.');
-logger.log('Готов к ней?');
+getFunc()();
