@@ -2,34 +2,25 @@
 // let money = 1000 + 1040 + 416 + 1040 + 312 + 1040 + 100; 
 // alert(money);
 
-let lesson9 = 'Декораторы и переадресация вызова, call/apply';
-
-function slow(x) {
-  // здесь могут быть ресурсоёмкие вычисления
-  alert(`Called with ${x}`); //1
-  x = 'Anatolyj'; //4.2
-  return x; 
+let lesson10 = 'Привязка контекста к функции';
+//
+function askPassword(ok, fail) {
+  let password = prompt("Password?", '');
+  if (password == "rockstar") ok();
+  else fail();
 }
 
-function cachingDecorator(func) {
-  let cache = new Map();
+let user = {
+  name: 'John',
 
-  return function(x) {
-    if (cache.has(x)) {    // если кеш содержит такой x,
-      alert('Rezultat prochitan iz kesha >');
-      return '>' + cache.get(x); // читаем из него результат //4.1
-    }
+  login(result) {
+    alert( this.name + (result ? ' logged in' : ' failed to log in') );
+  }
+};
 
-    let result = func(x); // иначе, вызываем функцию
+askPassword(() => user.login(true), () => user.login(false));
+// Или же можно создать частично применённую функцию на основе user.login, 
+// которая использует объект user в качестве контекста и получает
+// соответствующий первый аргумент:
 
-    cache.set(x, result); // и кешируем (запоминаем) результат
-    alert(result + ' alert result'); //2
-    return result + ' return result'; //3
-  };
-}
-
-slow = cachingDecorator(slow);
-
-alert( slow(1) ); // slow(1) кешируем 1 - 2 - 3
-
-alert( slow(1) ); // возвращаем из кеша 4.1 - 4.2
+askPassword(user.login.bind(user, true), user.login.bind(user, false));
