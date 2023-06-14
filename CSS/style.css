@@ -20,14 +20,14 @@ html, body {
 }
 /* ------- header, test js --------- */
 .header__test-js {
-background-color: #B0DAD2;
+background-color: #464d4b;
 overflow: auto;
 }
 .test-js__heading {
   font-size: 64px;
   color: midnightblue;
-  margin-top: 100px;
-  margin-left: 200px;
+  margin-top: 50px;
+  margin-left: 400px;
 }
 .test-js__button {
 box-sizing: border-box;
@@ -43,7 +43,7 @@ line-height: 131px;
 color: #1f1d1d;
 text-shadow: 10px 10px 10px rgba(0, 0, 0, 0.35);
 transition: all 1s;
-margin-top: 152px;
+margin-top: 52px;
 margin-left: 450px;
 margin-bottom: 152px;
 }
@@ -65,11 +65,30 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
   border: 6px solid #d11010;
   transition: 0.1s;
 }
+.undertale__window {
+  background-color: #000000;
+  display: inline-flex;
+  margin-top: 25px;
+  /* margin-left: 335px; */
+  margin-left: 25%;
+  border-radius: 14px;
+  padding: 5px;
+  border: 5px solid white;
+  transition: all 1s;
+}
+.undertale__avatar {
+}
+.undertale__text {
+  font-size: 25px;
+  word-wrap: break-word;
+  width: 350px;
+  color: #fff;
+}
 @media (max-width: 900px) {
   .test-js__heading {
     font-size: 45px;
     color: rgb(124, 10, 218);
-    margin-top: 100px;
+    margin-top: 20px;
     margin-left: 150px;
   }
   .test-js__button {
@@ -77,44 +96,63 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
     margin-left: 270px;
     margin-bottom: 193px;
   }
+  .undertale__window {
+    transition: all 1s;
+    transform: scale(0.9);
+  }
   }
 @media (max-width: 800px) {
   .test-js__heading {
     font-size: 32px;
-    color: rgb(89, 112, 25);
-    margin-top: 100px;
+    color: rgb(155, 19, 76);
+    margin-top: 20px;
     margin-left: 150px;
   }
   .test-js__button {
-    margin-top: 100px;
-    margin-left: 220px;
+    margin-top: 20px;
+    margin-left: 210px;
     margin-bottom: 193px;
+  }
+  .undertale__window {
+    transition: all 1s;
+    margin-left: 70px;
+    transform: scale(0.8);
   }
   }
   @media (max-width: 700px) {
     .test-js__heading {
       font-size: 32px;
       color: rgb(19, 197, 188);
-      margin-top: 100px;
+      margin-top: 20px;
       margin-left: 130px;
     }
     .test-js__button {
-      margin-top: 100px;
-      margin-left: 180px;
-      margin-bottom: 193px;
+      margin-top: 20px;
+      margin-left: 160px;
+      margin-bottom: 101px;
+    }
+    .undertale__window {
+      margin-left: 30px;
+      transition: all 1s;
+      transform: scale(0.8);
     }
     }
 @media (max-width: 600px) {
   .test-js__heading {
     font-size: 32px;
-    color: midnightblue;
-    margin-top: 100px;
+    color: rgb(68, 240, 91);
+    margin-top: 10px;
     margin-left: 50px;
   }
   .test-js__button {
-    margin-top: 100px;
-    margin-left: 110px;
-    margin-bottom: 193px;
+    margin-top: 30px;
+    margin-left: 105px;
+    margin-bottom: 101px;
+  }
+  .undertale__window {
+    margin-left: -10px;
+    transition: all 1s;
+    transform: scale(0.8);
   }
   }
   @media (max-width: 170px) {
@@ -129,5 +167,10 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
       margin-left: -87px;
       margin-bottom: 330px;
       transform: scale(0.5);
+    }
+    .undertale__window {
+      transition: all 1s;
+      transform: scale(0.4);
+      margin-left: -200px;
     }
     }
