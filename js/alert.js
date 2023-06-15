@@ -5,10 +5,11 @@
 let sectionOfLearning = 'Свойства объекта, их конфигурация';
 let lessonFirst = 'Флаги и дескрипторы свойств';
 
-let user = {
-  name: 'Jogn'
-};
+let user = {};
 
-let descriptor = Object.getOwnPropertyDescriptor(user, 'name');
+Object.defineProperties(user, {
+  name: { value: "John", writable: false },
+  surname: { value: "Smith", writable: false },
+});
 
-alert ( JSON.stringify(descriptor, null, 2) );
+let link = 'https://learn.javascript.ru/property-descriptors';
