@@ -87,6 +87,9 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
 .undertale__text span {
   color: #d11010;
 }
+.undertale__text span.span_yellow {
+  color: yellow;
+}
 @media (max-width: 900px) {
   .test-js__heading {
     font-size: 45px;
