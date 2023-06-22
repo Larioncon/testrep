@@ -128,14 +128,14 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
   @media (max-width: 700px) {
     .test-js__heading {
       font-size: 32px;
-      color: rgb(19, 197, 188);
+      color: rgb(212, 221, 221);
       margin-top: 20px;
       margin-left: 130px;
     }
     .test-js__button {
       margin-top: 20px;
       margin-left: 160px;
-      margin-bottom: 101px;
+      margin-bottom: 190px;
     }
     .undertale__window {
       margin-left: 30px;
