@@ -17,18 +17,62 @@
       <header class="header">
         <section class="header__test-js">
           <div class="container">
-            <div class="test-js__inner">
-              <h1 class="test-js__heading">Size</h1>
+            <div class="test-js__inner">    
               <div class="undertale__window">
                 <img src="Images/undertale__gif/skelet__talking.gif" alt="avatar" class="undertale__avatar">
-                <p class="undertale__text"><span>Прототипы, наследование:</span> <br> 1 (Прототипное наследование), <br> <span class="span_yellow">2 (F.prototype),</span><br> 3 (Встроенные прототипы), <br> 4 (Методы прототипов, объекты без свойства __proto__) </p>
+                <p class="undertale__text" id="text"></p>
               </div>
-              <button onclick="loadScript()" class="test-js__button">ON</button>
             </div>
           </div>
         </section>
       </header>
+      <main class="main__tasks">
+        <div class="first-task main__first-task">
+          <div class="container">
+            <div class="first-task__inner">
+              <h3>Конвертация единиц измерения</h3>
+      
+              <div class="input-group">
+                <label for="unit">Единица измерения:</label>
+                <select id="unit">
+              <option value="m">метры</option>
+              <option value="cm">сантиметры</option>
+              <option value="in">дюймы</option>
+              <option value="ft">футы</option>
+              <option value="mm">миллиметры</option>
+              <option value="yd">ярды</option>
+              <option value="km">километры</option>
+                </select>
+              </div>
+      
+              <div class="input-group">
+                <label for="distance">Расстояние:</label>
+                <input type="number" id="distance" placeholder="Введите расстояние" required>
+              </div>
+      
+              <div class="input-group">
+                <label for="convertTo">Конвертировать в:</label>
+                <select id="convertTo">
+              <option value="m">метры</option>
+              <option value="cm">сантиметры</option>
+              <option value="in">дюймы</option>
+              <option value="ft">футы</option>
+              <option value="mm">миллиметры</option>
+              <option value="yd">ярды</option>
+              <option value="km">километры</option>
+                </select>
+              </div>
+              <h2 class="result__heading">Результат: </h2>
+              <div id="result"></div>
+              <button id="convertBtn">Конвертировать</button>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      
 </div>
+
 
 
 

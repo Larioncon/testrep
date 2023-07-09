@@ -39,3 +39,5 @@ let rabbit = new Rabbit ();
 delete Rabbit.prototype.eats;
 
 alert( rabbit.eats );
+
+let link = 'https://learn.javascript.ru/function-prototype';

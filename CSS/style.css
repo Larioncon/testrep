@@ -1,6 +1,6 @@
 html, body {
   font-size: 16px;
-  font-family: Manrope, sans-serif;
+  font-family: undertale, sans-serif;
   font-style: normal;
   color: #424551;
   line-height: 160%;
@@ -67,10 +67,10 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
 }
 .undertale__window {
   background-color: #000000;
-  display: inline-flex;
-  margin-top: 25px;
-  /* margin-left: 335px; */
-  margin-left: 25%;
+  display: inline-flex; 
+  margin-top: 125px;
+  margin-left: 100px;
+  margin-bottom: 568px;
   border-radius: 14px;
   padding: 5px;
   border: 5px solid white;
@@ -79,9 +79,9 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
 .undertale__avatar {
 }
 .undertale__text {
-  font-size: 25px;
+  font-size: 14px;
   word-wrap: break-word;
-  width: 350px;
+  width: 700px;
   color: #fff;
 }
 .undertale__text span {
@@ -180,3 +180,65 @@ text-shadow: 15px 15px 15px rgba(0, 0, 0, 0.35);
       margin-left: -200px;
     }
     }
+
+    
+h3 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.input-group {
+  margin-bottom: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 17px 30px 17px 30px;
+  border: 3px solid #ccc;
+  border-radius: 47px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+
+button {
+  padding: 20px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#result {
+  margin: 20px 0 20px 0;
+  width: 100%;
+  padding: 17px 30px 17px 30px;
+  border: 3px solid rgba(7, 172, 29, 0.863);
+  border-radius: 47px;
+}
+
+/* Стили для первого задания */
+.main__first-task {
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+option, select {
+  font-size: 16px;
+  font-family: undertale, sans-serif;
+}
