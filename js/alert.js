@@ -1,43 +1,60 @@
 "use strict"; 
-// let money = 1000 + 1040 + 416 + 1040 + 312 + 1040 + 100; 
-// alert(money);
+
+
 
 let newSectionPrototypes = 'prototypes';
-let lesson2 = 'F.prototype';
+let lesson3 = 'Встроенные прототипы';
 
-// let animal = {
-//   eats: true
+// let arr = [1, 2, 3];
+
+// String.prototype.al = function() {
+//   alert(this);
 // };
-// function Rabbit(name) {
-//   this.name = name;
-// }
-// Rabbit.prototype = animal;
 
-// let rabbit = new Rabbit ('White Rabbit'); //  rabbit.__proto__ == animal
+// 'This is alert from String.prototype.al'.al();
 
+//sssssssssss
 
-// alert( rabbit.eats );
-
-//constructor 
-
-// function Rabbit () {
-
+// if (!String.prototype.repeat) {
+//   String.prototype.repeat= function(n) {
+//     return new Array(n + 1).join(this);
+//   };
 // }
 
-// let rabbit = new Rabbit ();
-// alert( rabbit.constructor == Rabbit );
+// alert('La'.repeat(5));
 
-//tasks:
+//ssss
+// let obj = {
+//   0: 'Hell',
+//   1: 'World',
+//   length: 2,
+// };
 
-function Rabbit () {}
-Rabbit.prototype = {
-  eats: true
-};
+// obj.join = Array.prototype.join;
 
-let rabbit = new Rabbit ();
+// alert( obj.join(',') );
+// task
+// Function.prototype.defer = function(ms) {
+//   setTimeout(this, ms)
+// }
 
-delete Rabbit.prototype.eats;
+// function f() {
+//   alert('Huj');
+// }
 
-alert( rabbit.eats );
+// f.defer(2000);
 
-let link = 'https://learn.javascript.ru/function-prototype';
+//task2
+function task2 (a, b) {
+  alert ( a + b );
+}
+Function.prototype.defer = function(ms) {
+  const func = this;
+  return function (...args) {
+    setTimeout(() => func(...args), ms);
+  };
+}
+task2.defer(2000)(2, 4);
+
+
+let link = 'https://learn.javascript.ru/native-prototypes';
