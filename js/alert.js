@@ -3,58 +3,78 @@
 
 
 let newSectionPrototypes = 'prototypes';
-let lesson3 = 'Встроенные прототипы';
+let lesson4 = 'Методы прототипов, объекты без свойства __proto__';
 
-// let arr = [1, 2, 3];
-
-// String.prototype.al = function() {
-//   alert(this);
+// let animal = {
+//   eats: 'yes'
 // };
 
-// 'This is alert from String.prototype.al'.al();
+// создаём новый объект с прототипом animal
+// let rabbit = Object.create(animal);
 
-//sssssssssss
+// alert(rabbit.eats); // true
 
-// if (!String.prototype.repeat) {
-//   String.prototype.repeat= function(n) {
-//     return new Array(n + 1).join(this);
-//   };
+// alert(Object.getPrototypeOf(rabbit) === animal); // получаем прототип объекта rabbit
+
+// Object.setPrototypeOf(rabbit, {}); // заменяем прототип объекта rabbit на {}
+
+
+//
+//У Object.create есть необязательный второй аргумент: 
+//дескрипторы свойств. 
+//Мы можем добавить дополнительное свойство новому объекту таким образом:
+// let rabbitchik = Object.create(animal, {
+//   jumps: {
+//     value: true
+//   }
+// });
+
+
+// let chineseDictionary = Object.create(null);
+// chineseDictionary.hello = 'HEJ';
+// chineseDictionary.bye = 'GOOD LUCK!';
+
+// alert(Object.keys(chineseDictionary));
+
+// alert(rabbitchik.jumps);
+
+//tasks
+//first task
+
+// let dictionary = Object.create(null, {
+//   toString: {
+//     value() {
+//       return Object.keys(this).join();
+//     }
+//   }
+// });
+
+// dictionary.apple = 'Apple';
+// dictionary.__proto__ = 'test';
+
+// for(let key in dictionary) {
+//   alert (key);
 // }
 
-// alert('La'.repeat(5));
 
-//ssss
-// let obj = {
-//   0: 'Hell',
-//   1: 'World',
-//   length: 2,
-// };
 
-// obj.join = Array.prototype.join;
 
-// alert( obj.join(',') );
-// task
-// Function.prototype.defer = function(ms) {
-//   setTimeout(this, ms)
-// }
+// alert(dictionary);
 
-// function f() {
-//   alert('Huj');
-// }
-
-// f.defer(2000);
-
-//task2
-function task2 (a, b) {
-  alert ( a + b );
+function Rabbit(name) {
+  this.name = name;
 }
-Function.prototype.defer = function(ms) {
-  const func = this;
-  return function (...args) {
-    setTimeout(() => func(...args), ms);
-  };
+Rabbit.prototype.sayHi = function() {
+  alert(this.name);
 }
-task2.defer(2000)(2, 4);
 
+let rabbit = new Rabbit ('Rabbit');
+let newRabbit = new Rabbit ('Robert');
 
-let link = 'https://learn.javascript.ru/native-prototypes';
+rabbit.sayHi();
+newRabbit.sayHi();
+alert('divider');
+// Rabbit.prototype.sayHi();
+// Object.getPrototypeOf(rabbit).sayHi();
+rabbit.__proto__.sayHi();
+let link = 'https://learn.javascript.ru/prototype-methods';
