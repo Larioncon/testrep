@@ -2,79 +2,131 @@
 
 
 
-let newSectionPrototypes = 'prototypes';
-let lesson4 = 'Методы прототипов, объекты без свойства __proto__';
+let newSectionClass = 'class';
+let lesson1 = 'class:syntax';
 
-// let animal = {
-//   eats: 'yes'
-// };
-
-// создаём новый объект с прототипом animal
-// let rabbit = Object.create(animal);
-
-// alert(rabbit.eats); // true
-
-// alert(Object.getPrototypeOf(rabbit) === animal); // получаем прототип объекта rabbit
-
-// Object.setPrototypeOf(rabbit, {}); // заменяем прототип объекта rabbit на {}
-
-
-//
-//У Object.create есть необязательный второй аргумент: 
-//дескрипторы свойств. 
-//Мы можем добавить дополнительное свойство новому объекту таким образом:
-// let rabbitchik = Object.create(animal, {
-//   jumps: {
-//     value: true
+// class User {
+//   constructor(name) {
+//     this.name = name;
 //   }
-// });
-
-
-// let chineseDictionary = Object.create(null);
-// chineseDictionary.hello = 'HEJ';
-// chineseDictionary.bye = 'GOOD LUCK!';
-
-// alert(Object.keys(chineseDictionary));
-
-// alert(rabbitchik.jumps);
-
-//tasks
-//first task
-
-// let dictionary = Object.create(null, {
-//   toString: {
-//     value() {
-//       return Object.keys(this).join();
-//     }
+//   sayHi() {
+//     alert(`${this.name} hey!`)
 //   }
-// });
-
-// dictionary.apple = 'Apple';
-// dictionary.__proto__ = 'test';
-
-// for(let key in dictionary) {
-//   alert (key);
 // }
 
+// let user1 = new User ('Jamba');
 
+// user1.sayHi();
 
+//-----------
 
-// alert(dictionary);
+// let User = class {
+//   sayHi() {
+//     alert('Hello');
+//   }
+// };
 
-function Rabbit(name) {
-  this.name = name;
+// class User {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   get name() {
+//     return this._name;
+//   }
+//   set name(value) {
+//     if (value.length < 4) {
+      
+//       return alert( 'Name too short' );;
+//     }
+//     this._name = value;
+//   }
+// }
+
+// let user = new User ('Sai');
+// alert(user.name);
+
+// class User {
+//   name = 'Anon';
+
+//   sayHi() {
+//     alert(`Hey, ${this.name}!`);
+//   }
+// }
+// new User().sayHi();
+
+// function Clock({ template }) {
+  
+//   let timer;
+
+//   function render() {
+//     let date = new Date();
+
+//     let hours = date.getHours();
+//     if (hours < 10) hours = '0' + hours;
+
+//     let mins = date.getMinutes();
+//     if (mins < 10) mins = '0' + mins;
+
+//     let secs = date.getSeconds();
+//     if (secs < 10) secs = '0' + secs;
+
+//     let output = template
+//       .replace('h', hours)
+//       .replace('m', mins)
+//       .replace('s', secs);
+
+//     console.log(output);
+//   }
+
+//   this.stop = function() {
+//     clearInterval(timer);
+//   };
+
+//   this.start = function() {
+//     render();
+//     timer = setInterval(render, 1000);
+//   };
+
+// }
+
+class MyClock {
+  
+  constructor({templ}) {
+    this.templ = templ;
+    this.timer = null;
+  }
+  render() {
+    let date = new Date();
+
+    let hours = date.getHours();
+    if (hours < 10) hours = '0' + hours;
+
+    let mins = date.getMinutes();
+    if (mins < 10) mins = '0' + mins;
+
+    let secs = date.getSeconds();
+    if (secs < 10) secs = '0' + secs;
+
+    let output = this.templ
+      .replace('h', hours)
+      .replace('m', mins)
+      .replace('s', secs);
+
+    console.log(output);
+  }
+  stop(){
+    clearInterval(this.timer);
+  }
+  start(){
+    this.render();
+    this.timer = setInterval(this.render.bind(this), 1000)
+  }
 }
-Rabbit.prototype.sayHi = function() {
-  alert(this.name);
-}
 
-let rabbit = new Rabbit ('Rabbit');
-let newRabbit = new Rabbit ('Robert');
+let clock = new MyClock({templ: 'h:m:s'});
+clock.start()
 
-rabbit.sayHi();
-newRabbit.sayHi();
-alert('divider');
-// Rabbit.prototype.sayHi();
-// Object.getPrototypeOf(rabbit).sayHi();
-rabbit.__proto__.sayHi();
-let link = 'https://learn.javascript.ru/prototype-methods';
+
+
+
+let link = 'https://learn.javascript.ru/class';
