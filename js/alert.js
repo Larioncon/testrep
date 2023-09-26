@@ -1,132 +1,126 @@
-"use strict"; 
+"use strict";
 
+let newSectionClass = "class";
+let lesson2 = "class inheritance";
 
+// class Animal {
+//   constructor(name) {
+//     this.speed = 0;
+//     this.name = name;
+//   }
+//   run(speed) {
+//     this.speed = speed;
+//     alert(`${this.name} has speed: ${this.speed}.`);
+//   }
+//   stop() {
+//     this.speed = 0;
+//     alert(`${this.name} doesn't move.`);
+//   }
+// }
 
-let newSectionClass = 'class';
-let lesson1 = 'class:syntax';
+// let animal = new Animal('My pet');
 
-// class User {
+// animal.run(23);
+
+// class Rabbit extends Animal {
+//   hide() {
+//     alert(`${this.name} is hiding!`);
+//   }
+//   stop() {
+//     super.stop();
+//     this.hide();
+//   }
+// }
+// let rabbit = new Rabbit('White krol');
+
+// rabbit.run(5);
+// rabbit.stop();
+
+// class Animal {
+//   name = 'animal';
+
+//   constructor() {
+//     alert(this.name);
+//   }
+// }
+
+// class Rabbit extends Animal {
+//   name = 'rabbit';
+// }
+
+// new Rabbit ();
+
+// new Animal ();
+//task 1
+// class Animal {
 //   constructor(name) {
 //     this.name = name;
 //   }
-//   sayHi() {
-//     alert(`${this.name} hey!`)
-//   }
 // }
 
-// let user1 = new User ('Jamba');
-
-// user1.sayHi();
-
-//-----------
-
-// let User = class {
-//   sayHi() {
-//     alert('Hello');
-//   }
-// };
-
-// class User {
+// class Rabbit extends Animal {
 //   constructor(name) {
-//     this.name = name;
-//   }
-//   get name() {
-//     return this._name;
-//   }
-//   set name(value) {
-//     if (value.length < 4) {
-      
-//       return alert( 'Name too short' );;
-//     }
-//     this._name = value;
+//     super(name);
+//     this.created = Date.now();
 //   }
 // }
 
-// let user = new User ('Sai');
-// alert(user.name);
+// let rabbit = new Rabbit("White krol");
 
-// class User {
-//   name = 'Anon';
+// alert(rabbit.name);
 
-//   sayHi() {
-//     alert(`Hey, ${this.name}!`);
-//   }
-// }
-// new User().sayHi();
+//task2
 
-// function Clock({ template }) {
-  
-//   let timer;
-
-//   function render() {
-//     let date = new Date();
-
-//     let hours = date.getHours();
-//     if (hours < 10) hours = '0' + hours;
-
-//     let mins = date.getMinutes();
-//     if (mins < 10) mins = '0' + mins;
-
-//     let secs = date.getSeconds();
-//     if (secs < 10) secs = '0' + secs;
-
-//     let output = template
-//       .replace('h', hours)
-//       .replace('m', mins)
-//       .replace('s', secs);
-
-//     console.log(output);
-//   }
-
-//   this.stop = function() {
-//     clearInterval(timer);
-//   };
-
-//   this.start = function() {
-//     render();
-//     timer = setInterval(render, 1000);
-//   };
-
-// }
-
-class MyClock {
-  
-  constructor({templ}) {
-    this.templ = templ;
-    this.timer = null;
+class Clock {
+  constructor({ template }) {
+    this.template = template;
   }
   render() {
     let date = new Date();
 
     let hours = date.getHours();
-    if (hours < 10) hours = '0' + hours;
+    if (hours < 10) hours = "0" + hours;
 
     let mins = date.getMinutes();
-    if (mins < 10) mins = '0' + mins;
+    if (mins < 10) mins = "0" + mins;
 
     let secs = date.getSeconds();
-    if (secs < 10) secs = '0' + secs;
+    if (secs < 10) secs = "0" + secs;
 
-    let output = this.templ
-      .replace('h', hours)
-      .replace('m', mins)
-      .replace('s', secs);
+    let output = this.template
+      .replace("h", hours)
+      .replace("m", mins)
+      .replace("s", secs);
 
     console.log(output);
   }
-  stop(){
+
+  stop() {
     clearInterval(this.timer);
   }
-  start(){
+  start() {
     this.render();
-    this.timer = setInterval(this.render.bind(this), 1000)
+    this.timer = setInterval(() => this.render(), 1000);
   }
 }
 
-let clock = new MyClock({templ: 'h:m:s'});
-clock.start()
+class ExtendedClock extends Clock {
+  constructor ({ template, tickRate }) {
+    super({template});
+    this.tickRate = tickRate;
+  }
+  start() {
+    this.render();
+    this.timer = setInterval(() => this.render(), this.tickRate);
+  }
+}
 
 
+let lowResolutionClock = new ExtendedClock({
+  template: 'h:m:s',
+  tickRate: 10000
+});
 
+lowResolutionClock.start();
 
-let link = 'https://learn.javascript.ru/class';
+let link = "https://learn.javascript.ru/class-inheritance";
