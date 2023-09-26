@@ -1,126 +1,39 @@
 "use strict";
 
 let newSectionClass = "class";
-let lesson2 = "class inheritance";
+let lesson3 = "static-properties-methods";
 
-// class Animal {
-//   constructor(name) {
-//     this.speed = 0;
-//     this.name = name;
-//   }
-//   run(speed) {
-//     this.speed = speed;
-//     alert(`${this.name} has speed: ${this.speed}.`);
-//   }
-//   stop() {
-//     this.speed = 0;
-//     alert(`${this.name} doesn't move.`);
+// class User {
+//   static staticMethod() {
+//     alert( this === User);
 //   }
 // }
 
-// let animal = new Animal('My pet');
+// User.staticMethod();
 
-// animal.run(23);
-
-// class Rabbit extends Animal {
-//   hide() {
-//     alert(`${this.name} is hiding!`);
+// class Article {
+//   constructor(title, date) {
+//     this.title = title;
+//     this.date = date;
 //   }
-//   stop() {
-//     super.stop();
-//     this.hide();
-//   }
-// }
-// let rabbit = new Rabbit('White krol');
-
-// rabbit.run(5);
-// rabbit.stop();
-
-// class Animal {
-//   name = 'animal';
-
-//   constructor() {
-//     alert(this.name);
+//   static compare(articleA, articleB) {
+//     return articleA.date - articleB.date;
 //   }
 // }
 
-// class Rabbit extends Animal {
-//   name = 'rabbit';
-// }
 
-// new Rabbit ();
-
-// new Animal ();
-//task 1
-// class Animal {
-//   constructor(name) {
-//     this.name = name;
-//   }
-// }
-
-// class Rabbit extends Animal {
-//   constructor(name) {
-//     super(name);
-//     this.created = Date.now();
-//   }
-// }
-
-// let rabbit = new Rabbit("White krol");
-
-// alert(rabbit.name);
-
-//task2
-
-class Clock {
-  constructor({ template }) {
-    this.template = template;
-  }
-  render() {
-    let date = new Date();
-
-    let hours = date.getHours();
-    if (hours < 10) hours = "0" + hours;
-
-    let mins = date.getMinutes();
-    if (mins < 10) mins = "0" + mins;
-
-    let secs = date.getSeconds();
-    if (secs < 10) secs = "0" + secs;
-
-    let output = this.template
-      .replace("h", hours)
-      .replace("m", mins)
-      .replace("s", secs);
-
-    console.log(output);
-  }
-
-  stop() {
-    clearInterval(this.timer);
-  }
-  start() {
-    this.render();
-    this.timer = setInterval(() => this.render(), 1000);
-  }
-}
-
-class ExtendedClock extends Clock {
-  constructor ({ template, tickRate }) {
-    super({template});
-    this.tickRate = tickRate;
-  }
-  start() {
-    this.render();
-    this.timer = setInterval(() => this.render(), this.tickRate);
-  }
-}
+// let articles = [
+//   new Article ('HTML', new Date(2019, 2, 1)),
+//   new Article ('CSS', new Date(2019, 1, 1)),
+//   new Article ('JS', new Date(2019, 3, 1))
+// ];
 
 
-let lowResolutionClock = new ExtendedClock({
-  template: 'h:m:s',
-  tickRate: 10000
-});
+// articles.sort(Article.compare);
 
-lowResolutionClock.start();
+// alert(articles[0].title);
 
-let link = "https://learn.javascript.ru/class-inheritance";
+
+
+
+let link = "https://learn.javascript.ru/static-properties-methods";
