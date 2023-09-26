@@ -1,39 +1,52 @@
 "use strict";
 
 let newSectionClass = "class";
-let lesson3 = "static-properties-methods";
+let lesson4 = "private-protected-properties-methods";
 
-// class User {
-//   static staticMethod() {
-//     alert( this === User);
+// class CoffeeMachine {
+//   waterAmount = 0;
+
+//   constructor(power) {
+//     this.power = power;
+//     alert(`Coffee machine has power: ${power}`);
 //   }
 // }
 
-// User.staticMethod();
+// let CoffeeMachine = new CoffeeMachine(100);
 
-// class Article {
-//   constructor(title, date) {
-//     this.title = title;
-//     this.date = date;
+// CoffeeMachine.waterAmount = 200;
+
+// class CoffeeMachine {
+//   _waterAmount = 0;
+
+//   set waterAmount(value) {
+//     if (value < 0) throw new Error("Water isn enough!");
+//     this._waterAmount = value;
 //   }
-//   static compare(articleA, articleB) {
-//     return articleA.date - articleB.date;
+//   get waterAmount() {
+//     return this._waterAmount;
+//   }
+//   constructor(power) {
+//     this._power = power;
 //   }
 // }
 
+// let CoffeeMachine = new CoffeeMachine(100);
 
-// let articles = [
-//   new Article ('HTML', new Date(2019, 2, 1)),
-//   new Article ('CSS', new Date(2019, 1, 1)),
-//   new Article ('JS', new Date(2019, 3, 1))
-// ];
+// CoffeeMachine.waterAmount = -10;
+
+// class CoffeeMachine {
+//   constructor(power) {
+//     this._power = power;
+//   }
+//   get power() {
+//     return this._power;
+//   }
+// }
+// let CoffeeMachine = new CoffeeMachine(100);
+
+// alert(`Power is: ${CoffeeMachine.power}W`);
+// CoffeeMachine.power = 25;
 
 
-// articles.sort(Article.compare);
-
-// alert(articles[0].title);
-
-
-
-
-let link = "https://learn.javascript.ru/static-properties-methods";
+let link = "https://learn.javascript.ru/private-protected-properties-methods";
