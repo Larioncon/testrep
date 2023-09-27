@@ -1,52 +1,39 @@
 "use strict";
 
 let newSectionClass = "class";
-let lesson4 = "private-protected-properties-methods";
+let lesson5 = "extend-natives";
 
-// class CoffeeMachine {
-//   waterAmount = 0;
-
-//   constructor(power) {
-//     this.power = power;
-//     alert(`Coffee machine has power: ${power}`);
+// class PowerArray extends Array {
+//   isEmpty() {
+//     return this.length === 0;
 //   }
 // }
 
-// let CoffeeMachine = new CoffeeMachine(100);
+// let arr = new PowerArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30);
+// alert(arr.isEmpty() );
 
-// CoffeeMachine.waterAmount = 200;
+// let filteredArr = arr.filter(item => item >= 45 );
 
-// class CoffeeMachine {
-//   _waterAmount = 0;
-
-//   set waterAmount(value) {
-//     if (value < 0) throw new Error("Water isn enough!");
-//     this._waterAmount = value;
-//   }
-//   get waterAmount() {
-//     return this._waterAmount;
-//   }
-//   constructor(power) {
-//     this._power = power;
-//   }
-// }
-
-// let CoffeeMachine = new CoffeeMachine(100);
-
-// CoffeeMachine.waterAmount = -10;
-
-// class CoffeeMachine {
-//   constructor(power) {
-//     this._power = power;
-//   }
-//   get power() {
-//     return this._power;
-//   }
-// }
-// let CoffeeMachine = new CoffeeMachine(100);
-
-// alert(`Power is: ${CoffeeMachine.power}W`);
-// CoffeeMachine.power = 25;
+// alert(filteredArr.isEmpty());
 
 
-let link = "https://learn.javascript.ru/private-protected-properties-methods";
+
+// alert( arr.constructor === PowerArray);
+
+
+class PowerArray extends Array {
+  isEmpty() {
+    return this.length === 0;
+  }
+  
+  static get [Symbol.species]() {
+    return Array;
+  }
+}
+
+let arr = new PowerArray(1,2,3,4,5, 10, 25);
+
+alert(arr.isEmpty() );
+
+
+let link = "https://learn.javascript.ru/extend-natives";
