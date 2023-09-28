@@ -1,39 +1,40 @@
 "use strict";
 
 let newSectionClass = "class";
-let lesson5 = "extend-natives";
+let lesson6 = "instanceof";
 
-// class PowerArray extends Array {
-//   isEmpty() {
-//     return this.length === 0;
-//   }
+// class Rabbit {}
+// let rabbit = new Rabbit ();
+
+// alert ( rabbit instanceof Rabbit );
+
+
+
+// function Rabbit() {
+
 // }
 
-// let arr = new PowerArray(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30);
-// alert(arr.isEmpty() );
+// alert( new Rabbit() instanceof Rabbit );
 
-// let filteredArr = arr.filter(item => item >= 45 );
+// let arr = [1, 2, 3];
 
-// alert(filteredArr.isEmpty());
+// alert ( arr instanceof Array );
+// alert ( arr instanceof Object );
 
+// class Animal {
+//   static [Symbol.hasInstance](obj) {
+//     if (obj.canEat) return true;
+//   }
 
+// }
 
-// alert( arr.constructor === PowerArray);
+// let obj { canEat: true }
 
-
-class PowerArray extends Array {
-  isEmpty() {
-    return this.length === 0;
-  }
-  
-  static get [Symbol.species]() {
-    return Array;
-  }
-}
-
-let arr = new PowerArray(1,2,3,4,5, 10, 25);
-
-alert(arr.isEmpty() );
+// alert(obj instanceof Animal );
 
 
-let link = "https://learn.javascript.ru/extend-natives";
+
+
+
+
+let link = "https://learn.javascript.ru/instanceof";
